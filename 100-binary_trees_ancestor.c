@@ -20,9 +20,9 @@ const binary_tree_t *second)
 
 	if (first->left == second || first->right == second)
 		return (second->parent);
+	if (second->left == first || second->right == first)
+		return (first->parent);
 
-	return (first->parent);
-
-	binary_trees_ancestor(first->parent, second->parent);
+	return (binary_trees_ancestor(first->parent, second->parent));
 
 }
